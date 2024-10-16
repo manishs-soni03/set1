@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int numbers[5];
+    for (int i = 0; i < 5; i++) {
+        cin >> numbers[i];
+    }
+    bool isPalindrome = true;
+    for (int i = 0; i < 5 / 2; i++) {
+        if (numbers[i] != numbers[4 - i]) {
+            isPalindrome = false;
+            break;
+        }
+    }
+    cout << (isPalindrome ? "Palindrome" : "Not Palindrome") << endl;
+    return 0;
+}
