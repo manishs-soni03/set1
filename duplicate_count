@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+void countDuplicates(const vector<int>& arr) {
+    unordered_map<int, int> frequency;
+
+    for (int num : arr) {
+        frequency[num]++;
+    }
+
+    for (const auto& pair : frequency) {
+        if (pair.second > 1) {
+            cout << "Number " << pair.first << " appears " << pair.second << " times.\n";
+        }
+    }
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 1, 2, 5, 3, 6, 2};
+    countDuplicates(arr);
+    return 0;
+}
