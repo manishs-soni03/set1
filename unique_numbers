@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+void printUniqueNumbers(const vector<int>& arr) {
+    unordered_map<int, int> frequency;
+
+    for (int num : arr) {
+        frequency[num]++;
+    }
+
+    cout << "Unique numbers:\n";
+    for (const auto& pair : frequency) {
+        if (pair.second == 1) {
+            cout << pair.first << "\n";
+        }
+    }
+}
+
+int main() {
+    vector<int> arr = {1, 2, 2, 3, 4, 4, 5, 6, 1};
+    printUniqueNumbers(arr);
+    return 0;
+}
